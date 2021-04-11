@@ -1,0 +1,111 @@
+
+
+
+
+/* Main Page*/
+
+.main__welcomeBanner{
+    margin: 0;
+    padding: 0;
+    height: 500px;
+    background-image: url('../Images//Bienvenidos.jpg');
+    background-size: 100%;
+}
+
+.main__welcomeBanner h1{
+    position: absolute;
+    top: 40%;
+    left: 30%;
+    font-size: 4rem;
+    font-weight: 700;
+    letter-spacing: 1rem;
+    color: #fff;
+}
+
+.main__categoryBanner{
+   padding: 0 40px;
+   display: flex;
+   justify-content: space-evenly;
+   text-align: center;
+   font-size: 2rem;
+   cursor: pointer;
+}
+
+
+.main__categoryBanner img{
+    height: 300px;
+}
+.main__categoryBanner h3{
+    opacity: 0.5;
+}
+
+
+.main__bannerCard a{
+   color: beige;
+   text-decoration: none;
+}
+
+/* Product Page */
+
+.product__container{
+    padding: 20px;
+    height: 100%;
+    display: flex;
+ 
+}
+
+
+.product__containerDetails{
+    padding: 20px 100px;
+    height: 100%;
+
+ 
+}
+.product__nav{
+    flex-basis: 30%;
+}
+
+.product__images{
+   flex-basis: 70%;
+}
+
+.product__showProduct{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    flex: 1 1 40%;
+}
+
+.product__card{
+    display: flex;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    height: auto;
+
+}
+
+.product__card h5{
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    opacity: 0.5;
+}
+
+.product__card button a{
+    text-decoration: none;
+    color: #efdac9;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    font-family: lato;
+}
+
+/* Cart Page */
+
+.cart__container{
+    padding: 20px 100px;
+    height: 100%;
+
+}
