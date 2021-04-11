@@ -12,7 +12,7 @@ export const ProductCard = ({
 
     return (
         < div className = 'product__card' >
-            <img src={`../Assets/${id}.jpg` } alt={ productTitle } />
+            <img src={`/Assets/${id}.jpg` } alt={ productTitle } />
             <h5 > { productTitle } </h5>
             <p > {price} </p>
              <p >

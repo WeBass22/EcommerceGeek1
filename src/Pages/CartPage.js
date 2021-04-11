@@ -5,7 +5,7 @@ import { ProductContext } from "../Context/ProductContext";
 import '../Styles/pages.css'
 
 
-const productImages = require.context( '../Assets', true )
+
 
 export const CartPage = () => {
   
@@ -47,8 +47,8 @@ export const CartPage = () => {
                     
                     </thead>
                     <tbody>
-                      
-                        <td>{product.productTitle}</td>
+                         
+                        <td><img src = {`./Assets/${product.id}.jpg`} alt = {product.title} />{product.productTitle}</td>
                         <td>{product.cantidad}</td>
                         <td>{product.price}</td>
                     
