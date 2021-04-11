@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import { ProductContext } from "../Context/ProductContext";
 
 import '../Styles/pages.css'
@@ -8,7 +9,19 @@ const productImages = require.context( '../Assets', true )
 
 export const CartPage = () => {
   
+  const {dispatch} = useContext(ProductContext)
   const {products} = useContext(ProductContext)
+
+  const {id} = products
+
+  const handleDelete = (productId) => {
+     const action = {
+       type: 'deleteProduct',
+       payload: productId
+     }
+
+     dispatch(action)
+  }
   
   return(
   
@@ -35,20 +48,28 @@ export const CartPage = () => {
                     </thead>
                     <tbody>
                       
-                        <td><img src = {productImages(`./${product.id}.jpg`) } /></td>
-                        <td>2</td>
+                        <td>{product.productTitle}</td>
+                        <td></td>
                         <td>{product.price}</td>
-                        <td>Sub Total</td>
+                        <td></td>
                     
                     </tbody>
                   </table>
-               </li>
+
+                   <i 
+                    onClick = {() => handleDelete(id)}
+                    className="fas fa-trash-alt"></i>
+               </li> 
+               
+              
+
                ))
           }
         </ul>
-
+        
+       
  
-          <button className = 'btn'> Pagar  </button>
+          <Link to = '/information'><button className = 'btn'> Pagar  </button></Link>
 
           </div>
 
