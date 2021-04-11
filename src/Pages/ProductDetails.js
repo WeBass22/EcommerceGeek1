@@ -2,9 +2,15 @@ import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { Redirect } from "react-router-dom";
 import { ProductContext } from "../Context/ProductContext";
+import { useForm } from "../Hooks/useForm";
 import { productById } from '../Selectors/productById'
 
 export const ProductDetails = () => {
+    
+    
+    const [{cantidad}, handleInputChange] = useForm({
+        cantidad: 1
+    })
 
     const {dispatch} = useContext(ProductContext)
 
@@ -17,7 +23,7 @@ export const ProductDetails = () => {
         return <Redirect to = '/' />
     }
 
-    const {productTitle, price, color } = product
+    const {productTitle, price} = product
 
     const handleAdd = (e) => {
         e.preventDefault()
@@ -26,7 +32,7 @@ export const ProductDetails = () => {
             id,
             productTitle, 
             price, 
-            color
+            cantidad
         }
 
        const action = {
@@ -37,6 +43,9 @@ export const ProductDetails = () => {
        dispatch(action)
     }
 
+    
+    
+   
     return ( 
       <div>
         <img src = { `../Assets/${id}.jpg` }/> 
@@ -47,6 +56,9 @@ export const ProductDetails = () => {
            <input 
                type = 'text'
                placeholder = '1'
+               value = {cantidad}
+               name = 'cantidad'
+               onChange = {handleInputChange}
            />
            <button
               onClick = {handleAdd}

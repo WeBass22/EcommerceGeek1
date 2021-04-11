@@ -3,13 +3,14 @@ import {Link} from 'react-router-dom'
 
 
 
-export const CategoryBanner = ({category, url}) => {
+
+export const CategoryBanner = ({title, category, url}) => {
     return (
         <div className = 'main__bannerCard'>
             <Link to = {`/products/${url}`}>
-            <h3>{category}</h3>
-            <img src = {`../../Assets/${category}.jpg`} alt = {category}></img>
+            <h3>{title}</h3>
             </Link>
+            <img src = {`../Assets/${category}.jpg`} alt = {category}/>
         </div>
     )
 }

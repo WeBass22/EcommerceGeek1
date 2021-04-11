@@ -49,10 +49,10 @@ export const CartPage = () => {
                     <tbody>
                       
                         <td>{product.productTitle}</td>
-                        <td></td>
+                        <td>{product.cantidad}</td>
                         <td>{product.price}</td>
-                        <td></td>
                     
+                        <td>{product.cantidad * product.price}</td>
                     </tbody>
                   </table>
 
