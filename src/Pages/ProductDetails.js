@@ -5,7 +5,9 @@ import { ProductContext } from "../Context/ProductContext";
 import { useForm } from "../Hooks/useForm";
 import { productById } from '../Selectors/productById'
 
-export const ProductDetails = () => {
+import '../Styles/pages.css'
+
+export const ProductDetails = ({ history }) => {
     
     
     const [{cantidad}, handleInputChange] = useForm({
@@ -23,7 +25,7 @@ export const ProductDetails = () => {
         return <Redirect to = '/' />
     }
 
-    const {productTitle, price} = product
+    const {productTitle, price, color} = product
 
     const handleAdd = (e) => {
         e.preventDefault()
@@ -44,13 +46,31 @@ export const ProductDetails = () => {
     }
 
     
+    console.log(history)
+
+    const handleReturn = () => {
+
+        if( history.length <=2 ) {
+            history.push('/');
+        } else {
+            history.goBack();
+        }
+
+    }
+
+
+    
     
    
     return ( 
-      <div>
+      <div className = 'product__productDetailsPage'>
+       <div className = 'product__productDetailsPageImg'>
         <img src = { `../Assets/${id}.jpg` }/> 
+      </div>
+      <div className = 'product__productDetailsPageInfo'>
         <h3>{productTitle}</h3>
-        <small>{price}</small>
+        <small>Precio: ${price}</small>
+        <small>Color: {color}</small>
 
         <div>
            <input 
@@ -59,11 +79,18 @@ export const ProductDetails = () => {
                value = {cantidad}
                name = 'cantidad'
                onChange = {handleInputChange}
+               autocomplete = 'off'
            />
            <button
+              className = 'btn'
               onClick = {handleAdd}
            >Agregar al carrito</button>
         </div>
+     </div>
+
+        <button 
+           onClick = {handleReturn}
+           className = 'btn'>Regresar</button>
     </div>
     )
 };

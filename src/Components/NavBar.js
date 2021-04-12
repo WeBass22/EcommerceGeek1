@@ -16,7 +16,7 @@ export const NavBar = () => {
            <ul>
                <li><Link to = '/'>Home</Link></li>
                <li><Link to = '/products'>Products</Link></li>
-               <li><Link to = '/cart'><i className="fas fa-cart-plus"><span>{products.length - 1}</span></i></Link></li>
+               <li><Link to = '/cart'><i className="fas fa-cart-plus"><span>{products.length }</span></i></Link></li>
            </ul> 
         </nav>
     )

@@ -14,10 +14,7 @@ export const ProductCard = ({
         < div className = 'product__card' >
             <img src={`/Assets/${id}.jpg` } alt={ productTitle } />
             <h5 > { productTitle } </h5>
-            <p > {price} </p>
-             <p >
-                 <small > { color } </small>
-            </p>
+            <p > ${price} </p>
             <button className = 'btn'>                               
              <Link to={ `/products/${ id }` }>
                             Más...

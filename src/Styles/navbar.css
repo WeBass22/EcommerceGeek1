@@ -3,6 +3,8 @@
   height: 6rem;
 }
 .nav__navbar ul{
+  padding: 0;
+  margin: 0;
   height: 100%;
   list-style: none;
   display: flex;
@@ -12,7 +14,12 @@
 .nav__navbar ul li a{
  text-decoration: none;
  font-size: 2rem;
+ letter-spacing: 2px;
  color: #000;
+}
+.nav__navbar ul li a:hover{
+   color: #ef3f0b;
+   opacity: 0.5;
 }
 i span{
   font-family: inherit;

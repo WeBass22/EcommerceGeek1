@@ -13,7 +13,7 @@ export const InformationPage = () => {
   const {name, email, tarjeta, fecha} = values
 
   return(
-   <div>
+   <div className = 'information__container'>
    <h3>Información de Pago</h3>
    
 
@@ -39,7 +39,7 @@ export const InformationPage = () => {
 
        <input 
            type = 'text'
-           placeholder = 'Nombre completo'
+           placeholder = 'Nro. de Tarjeta'
            value = {tarjeta}
            name = 'tarjeta'
            onChange = {handleInputChange}
@@ -54,6 +54,10 @@ export const InformationPage = () => {
            onChange = {handleInputChange}
            
            />
+
+        <button
+              className = 'btn'
+             >PAGAR</button>
 
 
 
